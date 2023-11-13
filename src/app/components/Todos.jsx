@@ -8,13 +8,12 @@ function Todos() {
 
   return (
     <>
-  <ul className="list-none">
+  <ul className="list-none ">
     {todos.map((todo)=>(
-      <li className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
-      kay={todo.id}
-      ><div className="text-white">{todo.text}</div>
+      <li key={todo.id} className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded">
+        <div className="text-white">{todo.text}</div>
       <button
-      onClick={()=>dispatch(removeTodo(todo.id))}><i class="fi fi-rs-eraser"></i></button></li>
+      onClick={()=>dispatch(removeTodo(todo.id))}><div className="bg-red-300 rounded p-2"><i  key={todo.id} className="fi fi-rs-eraser "></i></div></button></li>
     ))}
 </ul>
     </>
